@@ -1,18 +1,30 @@
 # CDS526-Casestudy
 # AOS-NSGA-II for Constrained Multi‑objective Optimization
 
-This repository contains the implementation of an **Adaptive Operator Selection (AOS)** mechanism integrated into **NSGA-II** for solving constrained multi‑objective optimization problems (CMOPs). The AOS uses Q‑learning to dynamically choose the most suitable variation operator during evolution. Experiments are conducted on standard CMOP benchmarks (CF, CTP, MW series) using the `pymoo` library.
- 
+This repository implements an **Adaptive Operator Selection (AOS)** mechanism integrated into **NSGA-II** for solving constrained multi‑objective optimization problems. A Q‑learning agent dynamically selects among three variation operators (SBX+polynomial mutation, DE mutation, uniform crossover+Gaussian mutation) based on the current population state, using Inverted Generational Distance (IGD) improvement as the reward.
+
+The method is evaluated on the **CF1** benchmark problem from the CEC2009 constrained multi‑objective competition.
 
 ## Dependencies
 
-- Python 3.8 or higher  
-- `numpy`  
-- `matplotlib`  
-- `pymoo` (version 0.6.0 or later)  
-- `scipy` (for statistical tests)
+- Python 3.8 or higher
+- `numpy`
+- `matplotlib`
+- `pymoo` (>=0.6.0)
+- `scipy` (optional, for statistical tests)
 
-Install all dependencies with:
+Install all required packages with:
 
 ```bash
 pip install -r requirements.txt
+
+
+
+
+
+
+
+
+
+## Dependenc
+
