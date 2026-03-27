@@ -1,3 +1,15 @@
+# -*- coding: utf-8 -*-
+"""
+Visualization tools for experimental results.
+Author: ZHANG Chenguo (Student ID: 5577723)
+Date: March 2026
+Description: Loads results from all_results.pkl and generates three plots:
+             - Convergence curves of IGD over generations (all runs)
+             - Boxplot of final IGD values across runs
+             - Pareto front comparison (obtained solutions vs. true PF)
+             All figures are saved to the 'results/' directory as PNG files.
+"""
+
 import pickle
 import numpy as np
 import matplotlib.pyplot as plt
