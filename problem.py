@@ -1,3 +1,13 @@
+# -*- coding: utf-8 -*-
+"""
+CF1 benchmark problem from CEC2009 constrained multi-objective competition.
+Author: ZHANG Chenguo (Student ID: 5577723)
+Date: March 2026
+Description: Defines the CF1 problem with two objectives and one inequality constraint.
+             The evaluate() method returns objectives and constraint violations.
+             The pareto_front() method returns a sampled true Pareto front for IGD calculation.
+"""
+
 import numpy as np
 
 class CF1:
