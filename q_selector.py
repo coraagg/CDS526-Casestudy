@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+Q-learning selector for adaptive operator selection.
+Author: ZHANG Chenguo (Student ID: 5577723)
+Date: March 2026
+Description: Implements the Q-learning agent that observes the population state and
+             selects among three variation operators.
+"""
+
 import numpy as np
 
 class QLearningSelector:
