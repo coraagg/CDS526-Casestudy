@@ -20,6 +20,28 @@ pip install -r requirements.txt
 
 
 
+# How to Run
+
+## Run Experiments
+
+To run 30 independent trials on the CF1 problem (200 generations each):
+
+```bash
+python run_experiments.py
+
+
+```markdown
+# Code Structure
+
+- `nsga2_aos.py` – Main algorithm (NSGA-II + Q-learning)
+- `operators.py` – Three variation operators
+- `problem.py` – CF1 problem definition
+- `q_selector.py` – Q-learning agent
+- `run_experiments.py` – Script to run 30 independent trials
+- `visualize.py` – Script to generate result plots
+
+
+
 
 
 
