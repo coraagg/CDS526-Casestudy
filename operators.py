@@ -1,3 +1,15 @@
+# -*- coding: utf-8 -*-
+"""
+Variation operators for adaptive operator selection.
+Author: ZHANG Chenguo (Student ID: 5577723)
+Date: March 2026
+Description: Implements three operators:
+             - Operator 0: Simulated binary crossover (SBX) + polynomial mutation
+             - Operator 1: Differential evolution (DE/rand/1) mutation
+             - Operator 2: Uniform crossover + Gaussian mutation
+All operators respect variable bounds defined by the problem.
+"""
+
 import numpy as np
 
 def sbx_polynomial_mutation(parent1, parent2, problem, eta_c=20, eta_m=20, prob_m=0.1):
