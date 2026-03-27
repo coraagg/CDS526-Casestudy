@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+NSGA-II with Adaptive Operator Selection (AOS) for constrained multi-objective optimization.
+Author: ZHANG Chenguo (Student ID: 5577723)
+Date: March 2026
+Description: This file implements the NSGA-II algorithm integrated with Q-learning based
+             adaptive operator selection. It defines the main algorithm class NSGA2_AOS.
+"""
+
 import numpy as np
 from operators import sbx_polynomial_mutation, de_operator, uniform_crossover_gaussian_mutation
 from q_selector import QLearningSelector
