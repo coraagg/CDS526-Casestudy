@@ -17,14 +17,14 @@ pip install -r requirements.txt
 ```
 
 ## How to Run
-## Run Experiments
+### Run Experiments
 To run 30 independent trials on the CF1 problem (200 generations each):
 ```bash
 python run_experiments.py
 ```
 Results are saved as pickle files in the results/ directory.
 
-## Generate Visualizations
+### Generate Visualizations
 After experiments complete, generate the convergence curves, boxplot, and Pareto front comparison:
 ```bash
 python visualize.py
