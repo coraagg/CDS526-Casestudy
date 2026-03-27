@@ -1,3 +1,14 @@
+# -*- coding: utf-8 -*-
+"""
+Experiment runner for NSGA-II with adaptive operator selection.
+Author: ZHANG Chenguo (Student ID: 5577723)
+Date: March 2026
+Description: Runs multiple independent trials (default 30) on the CF1 problem.
+             Saves results (IGD history, final population, objectives, constraints)
+             as pickle files in the 'results/' directory.
+             Parameters: population size = 100, max generations = 200.
+"""
+
 from problem import CF1
 from nsga2_aos import NSGA2_AOS
 import pickle
