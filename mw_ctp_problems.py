@@ -11,11 +11,7 @@ Description: Provides a unified interface (evaluate(), pareto_front(), n_var, et
 import numpy as np
 from pymoo.problems.multi import MW1, CTP1
 
-""" 
-Not conducting this experiment results in a different range of values from CF1. 
-This experiment requires additional post-processing, and the processing steps for 
-each experiment will then be inconsistent.
-"""
+# Unused
 class MW1_Wrapper:
     """
     Wrapper for MW1 problem from CEC2020.
