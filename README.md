@@ -149,6 +149,7 @@ Note: The true Pareto fronts are obtained from pymoo (for CTP series) or compute
 ## 🚀 Reproducing the Full Study (Colab)
 We provide an end‑to‑end Colab notebook that runs both AOS and fixed‑operator experiments, computes statistics (Wilcoxon test), and generates the LaTeX table.
 - Open in Colab: https://colab.research.google.com/gist/coraagg/51558e487498fb45d7eff77bbf48ed28/untitled0.ipynb?authuser=1#scrollTo=iGI4doU9PWiP
+
 The notebook includes:
 1. Mount Google Drive
 2. Install dependencies
