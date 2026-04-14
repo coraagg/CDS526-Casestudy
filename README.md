@@ -41,7 +41,6 @@ We compare the proposed **AOS-NSGA-II** against a **Fixed-NSGA-II** baseline tha
 - [Visualization](#-visualization)
 - [Reproducing the Full Study (Colab)](#-reproducing-the-full-study-colab)
 - [Technologies Used](#-technologies-used)
-- [Team Members](#-team-members)
 
 ---
 
