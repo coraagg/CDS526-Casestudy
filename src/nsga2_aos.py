@@ -2,7 +2,7 @@
 """
 NSGA-II with Adaptive Operator Selection (AOS) for constrained multi-objective optimization.
 Author: ZHANG Chenguo (Student ID: 5577723)
-Date: April 2026 (revised)
+Date: April 2026
 Description: NSGA-II integrated with Q-learning based adaptive operator selection.
              All operators and Q-selector are defined inside this file.
 """
