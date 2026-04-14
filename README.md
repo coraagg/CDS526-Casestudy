@@ -50,7 +50,7 @@ We compare the proposed **AOS-NSGA-II** against a **Fixed-NSGA-II** baseline tha
 CDS526-Casestudy/
 ├── notebook/                    # Jupyter/Colab notebooks
 │   └── CF1_CTP_Runs.ipynb       # Main notebook for running experiments & analysis
-├── src/ # Source code
+├── src/                         # Source code
 │   ├── nsga2_aos.py             # Main algorithm (NSGA-II + Q-learning)
 │   ├── operators.py             # Three variation operators
 │   ├── problem.py               # CF1 problem definition (with feasible Pareto front)
