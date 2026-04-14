@@ -3,24 +3,27 @@
 Visualization tools for experimental results.
 Author: ZHANG Chenguo (Student ID: 5577723)
 Date: April 2026
-Description: Loads results from all_results.pkl and generates three types of plots:
-             - Convergence curves of IGD over generations (one per problem)
-             - Boxplot of final IGD values across runs (all problems together)
-             - Pareto front comparison (obtained vs true, if available)
+Description: Loads results from Google Drive and generates plots.
 """
 
 import pickle
 import numpy as np
 import matplotlib.pyplot as plt
 from problem import get_problem
+import os
 
-def load_results(filepath='results/all_results.pkl'):
+# Default paths (adjust if needed)
+DEFAULT_RESULTS_DIR = '/content/drive/MyDrive/results'
+
+def load_results(filepath=None):
     """Load all experiment results from pickle file."""
+    if filepath is None:
+        filepath = os.path.join(DEFAULT_RESULTS_DIR, 'all_results.pkl')
     with open(filepath, 'rb') as f:
         results = pickle.load(f)
     return results
 
-def plot_convergence_per_problem(results):
+def plot_convergence_per_problem(results, save_dir=DEFAULT_RESULTS_DIR):
     """For each problem, plot the convergence curves of all runs."""
     problems = sorted(set(r['problem'] for r in results))
     for prob in problems:
@@ -33,11 +36,12 @@ def plot_convergence_per_problem(results):
         plt.title(f'Convergence Curves - {prob.upper()}')
         plt.grid(True)
         plt.legend(loc='upper right', ncol=2)
-        plt.savefig(f'results/convergence_{prob}.png')
-        plt.close()   # close to avoid displaying all interactively
-        print(f"Saved convergence plot for {prob}")
+        save_path = os.path.join(save_dir, f'convergence_{prob}.png')
+        plt.savefig(save_path)
+        plt.close()
+        print(f"Saved convergence plot for {prob} to {save_path}")
 
-def plot_boxplot_all_problems(results):
+def plot_boxplot_all_problems(results, save_dir=DEFAULT_RESULTS_DIR):
     """Boxplot of final IGD values for all problems."""
     problems = sorted(set(r['problem'] for r in results))
     data = []
@@ -49,14 +53,16 @@ def plot_boxplot_all_problems(results):
     plt.figure(figsize=(12, 6))
     plt.boxplot(data, labels=labels)
     plt.ylabel('Final IGD')
-    plt.title('Boxplot of Final IGD over 30 Runs per Problem')
+    plt.title('Boxplot of Final IGD over Runs per Problem')
     plt.grid(True)
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.savefig('results/boxplot_all_problems.png')
+    save_path = os.path.join(save_dir, 'boxplot_all_problems.png')
+    plt.savefig(save_path)
     plt.show()
+    print(f"Saved boxplot to {save_path}")
 
-def plot_pareto_for_problem(problem_name, results):
+def plot_pareto_for_problem(problem_name, results, save_dir=DEFAULT_RESULTS_DIR):
     """Plot Pareto front comparison for a single problem."""
     prob_results = [r for r in results if r['problem'] == problem_name]
     if not prob_results:
@@ -82,35 +88,39 @@ def plot_pareto_for_problem(problem_name, results):
     plt.title(f'Pareto Front Comparison ({problem_name.upper()})')
     plt.legend()
     plt.grid(True)
-    plt.savefig(f'results/pareto_{problem_name}.png')
+    save_path = os.path.join(save_dir, f'pareto_{problem_name}.png')
+    plt.savefig(save_path)
     plt.show()
+    print(f"Saved Pareto plot to {save_path}")
 
-def plot_all_pareto(results):
+def plot_all_pareto(results, save_dir=DEFAULT_RESULTS_DIR):
     """Generate Pareto plots for all problems that have a true front."""
     problems = sorted(set(r['problem'] for r in results))
     for prob in problems:
-        # Only attempt if problem has a pareto_front method (CF1, CTP, MW all do, but may return None)
         try:
             prob_obj = get_problem(prob)
             if prob_obj.pareto_front() is not None:
-                plot_pareto_for_problem(prob, results)
+                plot_pareto_for_problem(prob, results, save_dir)
             else:
                 print(f"Skipping Pareto plot for {prob} (no true front available)")
         except:
             print(f"Could not generate Pareto plot for {prob}")
 
 if __name__ == '__main__':
-    # Load results
+    # Load results from default Drive location
     results = load_results()
     print(f"Loaded {len(results)} experiment records.")
-
+    
+    # Ensure save directory exists
+    os.makedirs(DEFAULT_RESULTS_DIR, exist_ok=True)
+    
     # 1. Convergence curves per problem
     plot_convergence_per_problem(results)
-
+    
     # 2. Boxplot across all problems
     plot_boxplot_all_problems(results)
-
+    
     # 3. Pareto front plots for each problem (where true front exists)
     plot_all_pareto(results)
-
-    print("All figures saved to results/ directory.")
+    
+    print("All figures saved to Google Drive results/ directory.")
