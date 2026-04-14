@@ -1,41 +1,52 @@
 # CDS526-Casestudy
-# AOS-NSGA-II for Constrained Multi‑objective Optimization
+# 🧠 Adaptive Operator Selection for Constrained Multi‑objective Optimization (AOS-NSGA-II)
 
-This repository implements an **Adaptive Operator Selection (AOS)** mechanism integrated into **NSGA-II** for solving constrained multi‑objective optimization problems. A Q‑learning agent dynamically selects among three variation operators (SBX+polynomial mutation, DE mutation, uniform crossover+Gaussian mutation) based on the current population state, using Inverted Generational Distance (IGD) improvement as the reward.
+**A Q‑learning based operator selection mechanism integrated into NSGA-II for solving constrained multi‑objective optimization problems.**
 
-The method is evaluated on the **CF1** benchmark problem from the CEC2009 constrained multi‑objective competition.
+[![Python 3.8+](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org)
+[![NumPy](https://img.shields.io/badge/NumPy-1.24+-orange.svg)](https://numpy.org)
+[![Matplotlib](https://img.shields.io/badge/Matplotlib-3.7+-green.svg)](https://matplotlib.org)
+[![PyMoo](https://img.shields.io/badge/PyMoo-0.6+-red.svg)](https://pymoo.org)
+[![SciPy](https://img.shields.io/badge/SciPy-1.10+-purple.svg)](https://scipy.org)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Colab](https://img.shields.io/badge/Run%20in-Colab-F9AB00.svg)](https://colab.research.google.com/github/coraagg/CDS526-Casestudy/blob/main/CF1_CTP_Runs.ipynb)
 
-## Dependencies
-- Python 3.8 or higher
-- `numpy`
-- `matplotlib`
-- `pymoo` (>=0.6.0)
-- `scipy` (optional, for statistical tests)
-Install all required packages with:
-```bash
-pip install -r requirements.txt
-```
+---
 
-## How to Run
-### Run Experiments
-To run 30 independent trials on the CF1 problem (200 generations each):
-```bash
-python run_experiments.py
-```
-Results are saved as pickle files in the results/ directory.
+## 📌 Project Overview
 
-### Generate Visualizations
-After experiments complete, generate the convergence curves, boxplot, and Pareto front comparison:
-```bash
-python visualize.py
-```
-Figures are saved as PNG files in the results/ directory.
+Constrained multi‑objective optimization problems (CMOPs) require balancing **convergence**, **diversity**, and **feasibility** under constraints. This project implements an **Adaptive Operator Selection (AOS)** mechanism integrated into **NSGA-II** to dynamically choose the most suitable variation operator during the search process. A **Q‑learning agent** observes the current population state (feasible ratio and recent IGD improvement) and selects among three operators:
 
-## Code Structure
+- **Operator 0**: SBX crossover + polynomial mutation (local exploitation)
+- **Operator 1**: DE/rand/1 mutation (global exploration)
+- **Operator 2**: Uniform crossover + Gaussian mutation (diversity enhancement)
 
-- `nsga2_aos.py` – Main algorithm (NSGA-II + Q-learning)
-- `operators.py` – Three variation operators
-- `problem.py` – CF1 problem definition
-- `q_selector.py` – Q-learning agent
-- `run_experiments.py` – Script to run 30 independent trials
-- `visualize.py` – Script to generate result plots
+The agent receives the **improvement in Inverted Generational Distance (IGD)** as reward, enabling online adaptation without problem‑specific tuning.
+
+We compare the proposed **AOS-NSGA-II** against a **Fixed-NSGA-II** baseline that always uses Operator 0. Experiments are performed on three benchmark problems: **CF1** (CEC2009), **CTP1** and **CTP8** (classic CTP series). Each problem is run 30 independent times with 200 generations per run.
+
+**Key Results** (mean ± std over 30 runs):
+- ✅ AOS-NSGA-II achieves stable convergence and produces solution sets close to the true Pareto fronts.
+- ✅ On **CTP1**, AOS significantly outperforms the fixed operator (**p < 0.001**), with IGD = 0.026 ± 0.005 vs 0.050 ± 0.015.
+- ✅ Feasible solution ratio is **1.0** for all problems and both methods.
+- ✅ On CF1 and CTP8, performance is comparable (no statistically significant difference).
+
+---
+
+## 📋 Table of Contents
+- [Repository Structure](#-repository-structure)
+- [Key Results](#-key-results)
+- [Setup and Installation](#-setup-and-installation-reproducibility)
+- [How to Run](#-how-to-run--reproduce-results)
+- [Visualization](#-visualization)
+- [Reproducing the Full Study (Colab)](#-reproducing-the-full-study-colab)
+- [Technologies Used](#-technologies-used)
+- [Team Members](#-team-members)
+
+---
+
+## 📁 Repository Structure
+
+```text
+
+
