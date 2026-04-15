@@ -147,20 +147,25 @@ Note: The true Pareto fronts are obtained from pymoo (for CTP series) or compute
 ---
 
 ## 🚀 Reproducing the Full Study (Colab)
-We provide an end‑to‑end Colab notebook that runs both AOS and fixed‑operator experiments, computes statistics (Wilcoxon test), and generates the LaTeX table.
-- Open in Colab: https://colab.research.google.com/gist/coraagg/51558e487498fb45d7eff77bbf48ed28/untitled0.ipynb?authuser=1#scrollTo=iGI4doU9PWiP
 
-The notebook includes:
-1. Mount Google Drive
-2. Install dependencies
-3. Clone the repository
-4. Modify save paths
-5. Run AOS experiments (already done, results preloaded)
-6. Run fixed‑operator baseline
-7. Load results, compute IGD & feasible ratio
-8. Perform Wilcoxon signed‑rank test
-9. Generate LaTeX table and figures
-All results are automatically saved to Google Drive for persistence.
+We provide an **end‑to‑end Colab notebook** that reproduces all experiments, including AOS and fixed‑operator runs, statistical tests, and result visualisation.
+
+- **Open in Colab**: [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/coraagg/CDS526-Casestudy/blob/main/notebook/CF1_CTP_Runs.ipynb)
+
+The notebook is organised into the following cells:
+
+1. **Mount Google Drive** – to access saved results and store new outputs.
+2. **Install dependencies** – `pymoo`, `matplotlib`.
+3. **Clone the repository** – fetches the latest code.
+4. **Modify save path** – redirects `run_experiments.py` output to Google Drive.
+5. **Run AOS experiments (example)** – runs AOS on `ctp8` (30 runs, 200 generations) to demonstrate the process.  
+   *Full AOS results for CF1, CTP1 and CTP8 are already pre‑loaded from Drive in step 9.*
+6. **Generate figures** – uses existing AOS results to create convergence curves, boxplot and Pareto front plots (saved as PNG).
+7. **Define fixed‑operator NSGA‑II** – a variant of `NSGA2_AOS` that always uses Operator 0 (SBX+polynomial mutation).
+8. **Run fixed‑operator experiments** – runs the fixed operator on CF1, CTP1 and CTP8 (30 runs each, 200 generations). Results are saved locally (or to Drive if modified).
+9. **Load results and compute statistics** – loads AOS results (from Drive) and fixed‑operator results (from local `results_fixed/`), calculates final IGD and feasible ratios, performs Wilcoxon signed‑rank tests, and generates a LaTeX comparison table.
+
+All figures and the final LaTeX table are saved to the `results/` directory (or Google Drive). The notebook can be run from start to finish to fully reproduce the experimental results reported in the paper.
 
 ---
 
