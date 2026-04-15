@@ -58,13 +58,13 @@ CDS526-Casestudy/
 │   ├── run_experiments.py       # Script to run AOS experiments (30 runs, 200 gens)
 │   └── visualize.py             # Script to generate result plots
 ├── results/                     # Output directory 
-│   ├── convergence_CF1.png
-|   ├── convergence_CTP1.png
-|   ├── convergence_CTP8.png
+│   ├── convergence_cf1.png
+|   ├── convergence_ctp1.png
+|   ├── convergence_ctp8.png
 |   ├── boxplot_all_problems.png
-|   ├── pareto_CF1.png
-|   ├── pareto_CTP1.png
-|   └── pareto_CTP8.png
+|   ├── pareto_cf1.png
+|   ├── pareto_ctp1.png
+|   └── pareto_ctp8.png
 ├── requirements.txt 
 ├── README.md
 └── .gitignore
