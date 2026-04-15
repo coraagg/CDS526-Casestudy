@@ -74,8 +74,6 @@ if __name__ == '__main__':
     ctp_problems = [f'ctp{i}' for i in range(1, 9)]
     mw_problems = [f'mw{i}' for i in range(1, 15)]
 
-    problem_list = cf_problems + ctp_problems + mw_problems
-    # Optional subset for quick test:
-    # problem_list = ['cf1', 'ctp1', 'mw1']
-
+    problem_list = ['cf1', 'ctp1', 'ctp8']
+  
     run_experiments(problem_list, n_runs=30, max_gen=200)
