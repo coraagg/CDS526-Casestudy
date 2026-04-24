@@ -67,7 +67,8 @@ CDS526-Casestudy/
 |   └── pareto_ctp8.png
 ├── requirements.txt 
 ├── README.md
-└── .gitignore
+├── .gitignore
+└── alternative_experiments     # Alternative Experiment Records (Non-final Version)
 ```
 
 
