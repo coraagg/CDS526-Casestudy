@@ -117,7 +117,7 @@ For detailed numbers and plots, please refer to the generated CSV and image file
 
 
 
-# Experimental Reflections & Takeaways
+## Experimental Reflections & Takeaways
 Although this experiment was not submitted as the final submission, its results and the associated engineering practices yielded several important insights for this study.
 
 MW series problems have a higher dimension of decision variables and more complex nonlinear constraints. Among them, MW1 also has an unconnected feasible region topology. The convergence difficulty of the algorithm on this problem is significantly higher than that of CF1, CTP1, and CTP2. The 500 generations of running iterations may still not be sufficient for Q-learning to fully explore the state-action space and converge to the optimal strategy.
