@@ -68,7 +68,7 @@ CDS526-Casestudy/
 ├── .gitignore
 ├── README.md
 ├── requirements.txt 
-└── alternative_experiments      # Alternative Experiment Records (Non-final Version)
+└── alternative_experiments/     # Alternative Experiment Records (Non-final Version)
 ```
 
 
