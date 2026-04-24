@@ -65,9 +65,9 @@ CDS526-Casestudy/
 │   ├── q_selector.py            # Q-learning agent
 │   ├── run_experiments.py       # Script to run AOS experiments (30 runs, 200 gens)
 │   └── visualize.py             # Script to generate result plots
-├── requirements.txt 
-├── README.md
 ├── .gitignore
+├── README.md
+├── requirements.txt 
 └── alternative_experiments      # Alternative Experiment Records (Non-final Version)
 ```
 
