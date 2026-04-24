@@ -50,13 +50,6 @@ We compare the proposed **AOS-NSGA-II** against a **Fixed-NSGA-II** baseline tha
 CDS526-Casestudy/
 ├── notebook/                    # Jupyter/Colab notebooks
 │   └── CF1_CTP_Runs.ipynb       # Main notebook for running experiments & analysis
-├── src/                         # Source code
-│   ├── nsga2_aos.py             # Main algorithm (NSGA-II + Q-learning)
-│   ├── operators.py             # Three variation operators
-│   ├── problem.py               # CF1 problem definition (with feasible Pareto front)
-│   ├── q_selector.py            # Q-learning agent
-│   ├── run_experiments.py       # Script to run AOS experiments (30 runs, 200 gens)
-│   └── visualize.py             # Script to generate result plots
 ├── results/                     # Output directory 
 │   ├── convergence_cf1.png
 |   ├── convergence_ctp1.png
@@ -65,10 +58,17 @@ CDS526-Casestudy/
 |   ├── pareto_cf1.png
 |   ├── pareto_ctp1.png
 |   └── pareto_ctp8.png
+├── src/                         # Source code
+│   ├── nsga2_aos.py             # Main algorithm (NSGA-II + Q-learning)
+│   ├── operators.py             # Three variation operators
+│   ├── problem.py               # CF1 problem definition (with feasible Pareto front)
+│   ├── q_selector.py            # Q-learning agent
+│   ├── run_experiments.py       # Script to run AOS experiments (30 runs, 200 gens)
+│   └── visualize.py             # Script to generate result plots
 ├── requirements.txt 
 ├── README.md
 ├── .gitignore
-└── alternative_experiments     # Alternative Experiment Records (Non-final Version)
+└── alternative_experiments      # Alternative Experiment Records (Non-final Version)
 ```
 
 
