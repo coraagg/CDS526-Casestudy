@@ -40,8 +40,8 @@ class CF1:
             x1 = x[0]
 
             # J1/J2 definition：1-based 2~n → 0-based 1~n-1
-            J1 = [j for j in range(1, self.n_var) if (j + 1) % 2 == 1]  # 奇数位置
-            J2 = [j for j in range(1, self.n_var) if (j + 1) % 2 == 0]  # 偶数位置
+            J1 = [j for j in range(1, self.n_var) if (j + 1) % 2 == 1]
+            J2 = [j for j in range(1, self.n_var) if (j + 1) % 2 == 0]
 
             # Calculate g1（J1）
             g1 = 0.0
