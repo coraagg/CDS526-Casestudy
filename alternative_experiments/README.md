@@ -18,7 +18,7 @@ The code is organized into two main parts:
 Because the original code was refactored and only a few core modules (e.g., `operators.py`, `q_selector.py`) were reused after modification, **I have not included the entire original repository**.
 
 ```
-Iterative_Process_Experiments_Based_on_Baseline
+alternative_experiments
 ├── Inherited_Core_Files_By_ZCG_Baseline/ # Original code (unchanged)
 │   ├── __init__.py		# Makes the directory a Python package
 │   ├── nsga2_aos.py
@@ -35,10 +35,6 @@ Iterative_Process_Experiments_Based_on_Baseline
 ├── analysis_all.py # Statistical analysis (mean, std, Wilcoxon)
 ├── visualize_results.py # Generate convergence, boxplot, operator, PF figures
 │
-├── results/ # Automatically generated experiment data
-│   ├── CF1/
-│   ├── CTP/
-│   └── MW/
 ├── output_images/ # Automatically generated figures
 ├── optimized_statistics_table.csv # Statistical test of experimental results
 └── README.md # This file
